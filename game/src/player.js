@@ -27,6 +27,8 @@ class Player extends GameObject {
 		scene.removeMesh(this.playerMesh);
 	}
 
+
+
 	update(deltaTime) {
 		// Update the players physics:
 		this.velocity.y += gravity.y * deltaTime;
@@ -36,13 +38,16 @@ class Player extends GameObject {
 			this.endGame();
 		}
 
+		
+
 		// To simplify game code the Player handles spawning obstacles (this makes it easier to track for collisions without writing a full handler)
 		// A side effect of this is that creating or destroying the Player can pause or start the game.
 		this.obstacleSpawnTimer -= deltaTime;
 		if (this.obstacleSpawnTimer <= 0) {
 			this.obstacleSpawnTimer = obstacleSpawnInterval;
 
-			createObject(new Barrier());
+			let obstacle = createObject(new Barrier());
+			
 		}
 	}
 
@@ -78,6 +83,9 @@ class Player extends GameObject {
 		this.velocity.y = Math.min(cap, Math.max(-cap, this.velocity.y));
 	}
 
+	// create a function to update score in local storage
+
+
 	setupInputs() {
 		deviceSourceManager = new BABYLON.DeviceSourceManager(scene.getEngine());
 		/**
@@ -102,7 +110,7 @@ class Player extends GameObject {
 			// If Keyboard, add an Observer to change text
 			else if (deviceSource.deviceType === BABYLON.DeviceType.Keyboard) {
 				deviceSource.onInputChangedObservable.add((eventData) => {
-					if (eventData.type === "keydown" && eventData.key === " ") {
+					if (eventData.type === "keyup" && eventData.key === " ") {
 						this.onPlayerFlight();
 					}
 				});

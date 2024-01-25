@@ -92,8 +92,8 @@ class MainMenu extends GameObject {
 		this.welcomeText = new BABYLON.GUI.TextBlock();
 		this.welcomeText.text = "Flying Cube Game!";
 		this.welcomeText.fontFamily = "Impact";
-		this.welcomeText.color = "white";
-		this.welcomeText.fontSize = 72;
+		this.welcomeText.color = "orange";
+		this.welcomeText.fontSize = 70;
 		this.welcomeText.verticalAlignment = BABYLON.GUI.TextBlock.VERTICAL_ALIGNMENT_TOP;
 		this.welcomeText.horizontalAlignment = BABYLON.GUI.TextBlock.HORIZONTAL_ALIGNMENT_CENTER;
 		this.welcomeText.width = 0.5;
@@ -108,6 +108,7 @@ class MainMenu extends GameObject {
 		this.greetingText.horizontalAlignment = BABYLON.GUI.TextBlock.HORIZONTAL_ALIGNMENT_CENTER;
 		this.greetingText.width = 0.5;
 		this.greetingText.height = 0.7;
+		this.greetingText.top = "4%";
 
 		this.instructionsText = new BABYLON.GUI.TextBlock();
 		this.instructionsText.text = "press any key to play";
@@ -118,10 +119,14 @@ class MainMenu extends GameObject {
 		this.instructionsText.horizontalAlignment = BABYLON.GUI.TextBlock.HORIZONTAL_ALIGNMENT_CENTER;
 		this.instructionsText.width = 0.5;
 		this.instructionsText.height = 0.9;
+		this.instructionsText.top = "10%";
 
 		this.hudTexture.addControl(this.welcomeText);
 		this.hudTexture.addControl(this.greetingText);
 		this.hudTexture.addControl(this.instructionsText);
+
+		// Adjust the position of the greeting text
+		 // Adjust the percentage value as needed
 	}
 
 	hideUI() {

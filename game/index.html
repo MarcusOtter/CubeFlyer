@@ -1,10 +1,12 @@
-<!-- This file is based on the samples at https://doc.babylonjs.com/start/chap1/first_app -->
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<!-- import tailwind css -->
+		<link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
 		<title>Flying Cube Game</title>
-
 		<style>
 			html,
 			body {
@@ -29,19 +31,19 @@
 	</head>
 
 	<body>
+
+
 		<canvas id="renderCanvas" touch-action="none"></canvas>
 		<!-- touch-action="none" for best results from PEP -->
-
-		<!--  <script type="module" src="main.js"></script>  -->
-
+		<script src="src/hud.js"></script>
 		<script src="src/constants.js"></script>
 		<script src="src/state-manager.js"></script>
 		<script src="src/game-object.js"></script>
 		<script src="src/barrier.js"></script>
 		<script src="src/player.js"></script>
 		<script src="src/mainmenu.js"></script>
-		<script src="src/hud.js"></script>
 		<script src="src/scene.js"></script>
 		<script src="src/game.js"></script>
+		<!--  <script type="module" src="main.js"></script>  -->
 	</body>
 </html>

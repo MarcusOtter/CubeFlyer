@@ -1,5 +1,6 @@
 name: Deploy to GitHub Pages
 on:
+
   push:
     branches:
       - main
@@ -7,6 +8,7 @@ on:
 permissions:
   contents: write
 
+  
 jobs:
   deploy:
     runs-on: ubuntu-latest

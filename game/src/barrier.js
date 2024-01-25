@@ -36,6 +36,11 @@ class Barrier extends GameObject {
 		this.ceilingBox.position.x = this.location;
 		this.floorBox.position.x = this.location;
 
+		// update the score if the player has passed the barrier
+		if (this.location < 0 && this.location + deltaTime * obstacleSpeed > 0) {
+			addScore(1);
+		}
+
 		if (this.location < -25) {
 			destroyObject(this);
 		}
@@ -60,6 +65,7 @@ class Barrier extends GameObject {
 				return true;
 			}
 		}
+
 		return false;
 	}
 }

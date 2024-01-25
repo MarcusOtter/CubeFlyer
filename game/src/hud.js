@@ -1,4 +1,5 @@
 var score = 0;
+var currentScore = 0;
 var scoreText;
 
 var createHud = function () {
@@ -19,17 +20,31 @@ var createHud = function () {
 	hudTexture.addControl(scoreText);
 };
 
-var updateScoreText = function () {
-	scoreText.text = "Score: " + score;
+var setScore = function (score, currentScore) {
+	scoreText.text = "score: " + score  + "        " + "current: " + currentScore;
 };
 
+var updateScoreText = function () {
+	localStorage = navigator.localStorage;
+	score = localStorage.getItem("highScore")
+
+	if (currentScore  > score) {
+		score = currentScore;
+		localStorage.setItem("highScore", score);
+	}
+	
+	setScore(score, currentScore);
+};
+
+
 var resetScore = function () {
-	console.log("Score reset at: " + score);
-	score = 0;
-	updateScoreText();
+	console.log("Score reset at: " + currentScore);
+	currentScore = 0;
+
+	setScore(score, currentScore);
 };
 
 var addScore = function (points) {
-	score += points;
+	currentScore += points;
 	updateScoreText();
 };
