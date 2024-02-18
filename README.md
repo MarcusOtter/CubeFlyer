@@ -1,6 +1,6 @@
 # The Flying Cube Game! 🟥💨
 
-Hi!
+Hello!
 
 This project is intended to help introduce you to Open Source as part of [MLH 2023 Global Hack Week: GAMES](https://organize.mlh.io/participants/events/9153-global-hack-week-game-week)! It's a JavaScript-based 3D game built with [Babylon.JS](https://github.com/BabylonJS) that lets you fly a Cube through a set of obstacles.
 
