@@ -7,7 +7,7 @@ var createHud = function () {
 	// Create a Text Block that can display the current score
 	scoreText = new BABYLON.GUI.TextBlock();
 	scoreText.fontFamily = "Comic Sans, Comic Sans MS";
-	scoreText.color = "white";
+	scoreText.color = "yellow";
 	scoreText.fontSize = 48;
 	scoreText.verticalAlignment = BABYLON.GUI.TextBlock.VERTICAL_ALIGNMENT_TOP;
 	scoreText.horizontalAlignment = BABYLON.GUI.TextBlock.HORIZONTAL_ALIGNMENT_CENTER;
