@@ -6,7 +6,34 @@ This project is intended to help introduce you to Open Source as part of [MLH 20
 
 When you create a repository from this template, a series of [Issues](https://docs.github.com/en/issues) will be generated that you can pick up to get started.
 
-The entire project can be run by opening [`game/index.html`](game/index.html) in a browser. All of the 3rd party dependencies like Babylon are using a CDN so you do not need Node or a local developer environment.
+To Run this project: 
+
+1. **Fork the Repository**: 
+   - Click on the "Fork" button in the top right corner to create a copy of the repository under your GitHub account.
+
+2. **Clone the Forked Repository**:
+   - Open your terminal or command prompt.
+   - Use the following command to clone the repository to your local machine:
+     ```
+     git clone https://github.com/your-username/CubeFlyer.git
+     ```
+   - Replace `your-username` with your GitHub username.
+
+3. **Navigate to the Game Directory**:
+   - Change your current directory to the `game` directory within the cloned repository:
+     ```
+     cd CubeFlyer/game
+     ```
+
+4. **Open `index.html` in a Browser**:
+   - Once inside the `game` directory, open `index.html` in your preferred web browser:
+     ```
+     open index.html
+     ```
+   - This will launch the game in your browser, allowing you to play and test it locally.
+
+
+All of the 3rd party dependencies like Babylon are using a CDN so you do not need Node or a local developer environment.
 
 ## 🧙‍ New Open Sourcerers 
 If you're new to GitHub you can get started by creating a new repository by clicking `Use this template` and then selecting `Create a new repository` to create a copy of this repository into your own GitHub account. This is where you can make your own changes!
