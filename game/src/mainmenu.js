@@ -14,7 +14,7 @@ class MainMenu extends GameObject {
 		this.setupInputs();
 	}
 
-	onDestroy() {}
+	onDestroy() { }
 
 	update(deltaTime) {
 		// Don't do anything here
@@ -108,16 +108,47 @@ class MainMenu extends GameObject {
 		this.greetingText.horizontalAlignment = BABYLON.GUI.TextBlock.HORIZONTAL_ALIGNMENT_CENTER;
 		this.greetingText.width = 0.5;
 		this.greetingText.height = 0.7;
+		// add padding for greetings
+		this.greetingText.paddingTop = "15%";
+
 
 		this.instructionsText = new BABYLON.GUI.TextBlock();
 		this.instructionsText.text = "press any key to play";
 		this.instructionsText.fontFamily = "Impact";
 		this.instructionsText.color = "#aafffa";
-		this.instructionsText.fontSize = 32;
 		this.instructionsText.verticalAlignment = BABYLON.GUI.TextBlock.VERTICAL_ALIGNMENT_TOP;
 		this.instructionsText.horizontalAlignment = BABYLON.GUI.TextBlock.HORIZONTAL_ALIGNMENT_CENTER;
 		this.instructionsText.width = 0.5;
 		this.instructionsText.height = 0.9;
+
+		// mobile responsiveness 
+		const updateTextBlockStyle = () => {
+			const width = window.innerWidth;
+
+			if (width < 768) {
+				this.welcomeText.fontSize = 36;
+				this.welcomeText.width = 1;
+				this.instructionsText.fontSize = 20;
+				this.instructionsText.paddingTop = "10%";
+				this.greetingText.fontSize = 18;
+
+			} else if (width < 1024) {
+				this.welcomeText.fontSize = 40;
+				this.welcomeText.width = 1;
+				this.greetingText.fontSize = 26;
+				this.instructionsText.fontSize = 30;
+				this.instructionsText.paddingTop = "12%";
+			} else {
+				this.instructionsText.fontSize = 32;
+				this.instructionsText.paddingTop = "15%";
+			}
+		};
+
+		// Initial styling update
+		updateTextBlockStyle();
+
+		// Event listener to update the styling on window resize
+		window.addEventListener('resize', updateTextBlockStyle);
 
 		this.hudTexture.addControl(this.welcomeText);
 		this.hudTexture.addControl(this.greetingText);
